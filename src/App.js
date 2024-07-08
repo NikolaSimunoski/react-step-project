@@ -13,30 +13,39 @@ export default function App() {
   const [isVisible, setVisibility] = useState(true);
   //let step = 1;
 
+  // This can be used for image slider
+  // function handleNext() {
+  //   if (step === 3) {
+  //     setStep(1);
+  //   } else {
+  //     setStep(step + 1);
+  //   }
+  // }
+
+  // This can be used for image slider
+  // function handlePrevious() {
+  //   if (step === 1) {
+  //     setStep(3);
+  //   } else {
+  //     setStep(step - 1);
+  //   }
+  // }
   function handleNext() {
-    if (step === 3) {
-      setStep(1);
-    } else {
-      setStep(step + 1);
-    }
+    if (step < 3) setStep((s) => s + 1);
   }
-
   function handlePrevious() {
-    if (step === 1) {
-      setStep(3);
-    } else {
-      setStep(step - 1);
-    }
+    if (step > 1) setStep((s) => s - 1);
   }
-
   function handleVisibility() {
     setVisibility(!isVisible);
   }
 
   return (
     <>
-      <button className="close" onClick={handleVisibility}>
-        {/* Good to use if we have very simple logic <button className="close" onClick={() => setVisibility(!isVisible)}> */}
+      {/* <button className="close" onClick={handleVisibility}> */}
+
+      {/*Good to use if we have very simple logic */}
+      <button className="close" onClick={() => setVisibility((is) => !is)}>
         &times;
       </button>
       {isVisible && (
