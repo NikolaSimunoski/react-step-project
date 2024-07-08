@@ -7,8 +7,16 @@ const messages = [
   "Apply for jobs 💼",
   "Invest your new income 🤑",
 ];
-
 export default function App() {
+  return (
+    <div>
+      <Steps />
+      <Steps />
+    </div>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isVisible, setVisibility] = useState(true);
   //let step = 1;
@@ -41,7 +49,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div>
       {/* <button className="close" onClick={handleVisibility}> */}
 
       {/*Good to use if we have very simple logic */}
@@ -80,6 +88,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
